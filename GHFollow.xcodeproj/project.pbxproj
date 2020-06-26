@@ -12,6 +12,8 @@
 		B28D648824A69B7A0019FFEF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28D648724A69B7A0019FFEF /* ViewController.swift */; };
 		B28D648D24A69B7E0019FFEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B28D648C24A69B7E0019FFEF /* Assets.xcassets */; };
 		B28D649024A69B7E0019FFEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B28D648E24A69B7E0019FFEF /* LaunchScreen.storyboard */; };
+		B28D649824A6AE2D0019FFEF /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28D649724A6AE2D0019FFEF /* SearchVC.swift */; };
+		B28D649A24A6AE5A0019FFEF /* FavoritesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28D649924A6AE5A0019FFEF /* FavoritesListVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		B28D648C24A69B7E0019FFEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B28D648F24A69B7E0019FFEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B28D649124A69B7E0019FFEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B28D649724A6AE2D0019FFEF /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		B28D649924A6AE5A0019FFEF /* FavoritesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +60,12 @@
 			children = (
 				B28D648324A69B7A0019FFEF /* AppDelegate.swift */,
 				B28D648524A69B7A0019FFEF /* SceneDelegate.swift */,
+				B28D649724A6AE2D0019FFEF /* SearchVC.swift */,
 				B28D648724A69B7A0019FFEF /* ViewController.swift */,
 				B28D648C24A69B7E0019FFEF /* Assets.xcassets */,
 				B28D648E24A69B7E0019FFEF /* LaunchScreen.storyboard */,
 				B28D649124A69B7E0019FFEF /* Info.plist */,
+				B28D649924A6AE5A0019FFEF /* FavoritesListVC.swift */,
 			);
 			path = GHFollow;
 			sourceTree = "<group>";
@@ -134,7 +140,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B28D649824A6AE2D0019FFEF /* SearchVC.swift in Sources */,
 				B28D648824A69B7A0019FFEF /* ViewController.swift in Sources */,
+				B28D649A24A6AE5A0019FFEF /* FavoritesListVC.swift in Sources */,
 				B28D648424A69B7A0019FFEF /* AppDelegate.swift in Sources */,
 				B28D648624A69B7A0019FFEF /* SceneDelegate.swift in Sources */,
 			);
