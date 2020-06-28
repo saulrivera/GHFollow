@@ -27,6 +27,7 @@
 		B28D64BA24A7FA400019FFEF /* FollowerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28D64B924A7FA400019FFEF /* FollowerCell.swift */; };
 		B28D64BC24A7FABC0019FFEF /* GFAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28D64BB24A7FABC0019FFEF /* GFAvatarImageView.swift */; };
 		B28D64C024A842D70019FFEF /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = B28D64BF24A842D70019FFEF /* Readme.md */; };
+		B28D64C824A853ED0019FFEF /* GFEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28D64C724A853ED0019FFEF /* GFEmptyStateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		B28D64B924A7FA400019FFEF /* FollowerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCell.swift; sourceTree = "<group>"; };
 		B28D64BB24A7FABC0019FFEF /* GFAvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAvatarImageView.swift; sourceTree = "<group>"; };
 		B28D64BF24A842D70019FFEF /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+		B28D64C724A853ED0019FFEF /* GFEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFEmptyStateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,13 +112,13 @@
 		B28D64AA24A79B9B0019FFEF /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
-				B28D64A524A722CD0019FFEF /* GFAlertVC.swift */,
+				B28D64C624A853B70019FFEF /* Labels */,
+				B28D64C524A853A20019FFEF /* ViewControllers */,
+				B28D64C424A8539C0019FFEF /* ImageViews */,
+				B28D64C324A8538E0019FFEF /* TextFields */,
+				B28D64C224A853860019FFEF /* Buttons */,
+				B28D64C124A853780019FFEF /* Views */,
 				B28D64B824A7FA240019FFEF /* Cells */,
-				B28D64A124A71FE90019FFEF /* GFTitleLabel.swift */,
-				B28D649D24A6C57B0019FFEF /* GFTextField.swift */,
-				B28D64A324A721D40019FFEF /* GFBodyLabel.swift */,
-				B28D649B24A6B3C50019FFEF /* GFButton.swift */,
-				B28D64BB24A7FABC0019FFEF /* GFAvatarImageView.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -171,6 +173,55 @@
 				B28D64B924A7FA400019FFEF /* FollowerCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		B28D64C124A853780019FFEF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B28D64C724A853ED0019FFEF /* GFEmptyStateView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B28D64C224A853860019FFEF /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				B28D649B24A6B3C50019FFEF /* GFButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		B28D64C324A8538E0019FFEF /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				B28D649D24A6C57B0019FFEF /* GFTextField.swift */,
+			);
+			path = TextFields;
+			sourceTree = "<group>";
+		};
+		B28D64C424A8539C0019FFEF /* ImageViews */ = {
+			isa = PBXGroup;
+			children = (
+				B28D64BB24A7FABC0019FFEF /* GFAvatarImageView.swift */,
+			);
+			path = ImageViews;
+			sourceTree = "<group>";
+		};
+		B28D64C524A853A20019FFEF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B28D64A524A722CD0019FFEF /* GFAlertVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B28D64C624A853B70019FFEF /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				B28D64A124A71FE90019FFEF /* GFTitleLabel.swift */,
+				B28D64A324A721D40019FFEF /* GFBodyLabel.swift */,
+			);
+			path = Labels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,6 +304,7 @@
 				B28D648424A69B7A0019FFEF /* AppDelegate.swift in Sources */,
 				B28D64A624A722CD0019FFEF /* GFAlertVC.swift in Sources */,
 				B28D64BA24A7FA400019FFEF /* FollowerCell.swift in Sources */,
+				B28D64C824A853ED0019FFEF /* GFEmptyStateView.swift in Sources */,
 				B28D64B724A7DB3E0019FFEF /* ErrorMessage.swift in Sources */,
 				B28D648624A69B7A0019FFEF /* SceneDelegate.swift in Sources */,
 				B28D64AF24A79FB20019FFEF /* Follower.swift in Sources */,
