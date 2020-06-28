@@ -39,12 +39,15 @@ class FollowerListVC: UIViewController {
     }
     
     func getFollowers(_ username: String, in page: Int) {
+        showLoadingView()
         NetworkManager.shared.getFollowers(for: username, in: page) { [weak self] result in
             guard let self = self else { return }
+            self.dissmisLoadingView()
             
             switch result {
             case .failure(let error):
                 self.presentGFAlertOnMainThread(title: "Bad Stuff Happened", message: error.rawValue, buttonTitle: "Ok")
+                DispatchQueue.main.async { self.navigationController?.popViewController(animated: true) }
             case .success(let followers):
                 if followers.count < 99 { self.hasMoreFollowers = false }
                 self.followers.append(contentsOf: followers)
@@ -54,7 +57,7 @@ class FollowerListVC: UIViewController {
     }
 
     func configureCollectionView() {
-        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createThreeColumnFlowLayout(in: self.view))
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createThreeColumnFlowLayout(in: self.view))
         view.addSubview(collectionView)
         
         collectionView.backgroundColor = .systemBackground
