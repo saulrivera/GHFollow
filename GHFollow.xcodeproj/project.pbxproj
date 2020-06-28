@@ -26,6 +26,7 @@
 		B28D64B724A7DB3E0019FFEF /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28D64B624A7DB3E0019FFEF /* ErrorMessage.swift */; };
 		B28D64BA24A7FA400019FFEF /* FollowerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28D64B924A7FA400019FFEF /* FollowerCell.swift */; };
 		B28D64BC24A7FABC0019FFEF /* GFAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28D64BB24A7FABC0019FFEF /* GFAvatarImageView.swift */; };
+		B28D64C024A842D70019FFEF /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = B28D64BF24A842D70019FFEF /* Readme.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		B28D64B624A7DB3E0019FFEF /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		B28D64B924A7FA400019FFEF /* FollowerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCell.swift; sourceTree = "<group>"; };
 		B28D64BB24A7FABC0019FFEF /* GFAvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAvatarImageView.swift; sourceTree = "<group>"; };
+		B28D64BF24A842D70019FFEF /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 		B28D647724A69B7A0019FFEF = {
 			isa = PBXGroup;
 			children = (
+				B28D64BF24A842D70019FFEF /* Readme.md */,
 				B28D648224A69B7A0019FFEF /* GHFollow */,
 				B28D648124A69B7A0019FFEF /* Products */,
 			);
@@ -230,6 +233,7 @@
 			files = (
 				B28D649024A69B7E0019FFEF /* LaunchScreen.storyboard in Resources */,
 				B28D648D24A69B7E0019FFEF /* Assets.xcassets in Resources */,
+				B28D64C024A842D70019FFEF /* Readme.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
