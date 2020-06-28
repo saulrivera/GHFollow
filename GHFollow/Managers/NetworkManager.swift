@@ -6,10 +6,11 @@
 //  Copyright © 2020 Saul Rivera. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class NetworkManager {
     static let shared = NetworkManager()
+    let cache = NSCache<NSString, UIImage>()
     
     private init() { }
     
