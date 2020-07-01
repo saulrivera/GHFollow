@@ -1,5 +1,5 @@
 //
-//  ErrorMessage.swift
+//  GFError.swift
 //  GHFollow
 //
 //  Created by Saul Rivera on 27/06/20.
