@@ -38,6 +38,7 @@
 		B28D64D824AAE98C0019FFEF /* GFFollowerItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28D64D724AAE98C0019FFEF /* GFFollowerItemVC.swift */; };
 		B28D64DB24AAECF30019FFEF /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28D64DA24AAECF30019FFEF /* Date+Ext.swift */; };
 		B28D64DD24AAED130019FFEF /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28D64DC24AAED130019FFEF /* String+Ext.swift */; };
+		B28D64DF24AD88820019FFEF /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28D64DE24AD88820019FFEF /* PersistanceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		B28D64D724AAE98C0019FFEF /* GFFollowerItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFFollowerItemVC.swift; sourceTree = "<group>"; };
 		B28D64DA24AAECF30019FFEF /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		B28D64DC24AAED130019FFEF /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		B28D64DE24AD88820019FFEF /* PersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				B28D64B324A7CBA40019FFEF /* NetworkManager.swift */,
+				B28D64DE24AD88820019FFEF /* PersistanceManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				B28D64D824AAE98C0019FFEF /* GFFollowerItemVC.swift in Sources */,
 				B28D64B124A7A07B0019FFEF /* User.swift in Sources */,
 				B28D64D024A924A40019FFEF /* Constants.swift in Sources */,
+				B28D64DF24AD88820019FFEF /* PersistanceManager.swift in Sources */,
 				B28D64D224AAE0AF0019FFEF /* GFItemInfoView.swift in Sources */,
 				B28D64A824A72AAB0019FFEF /* UIViewController+Ext.swift in Sources */,
 				B28D649824A6AE2D0019FFEF /* SearchVC.swift in Sources */,
