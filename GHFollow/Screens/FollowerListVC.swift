@@ -8,11 +8,7 @@
 
 import UIKit
 
-protocol FollowerListVCDelegate: class {
-    func didRequestFollowers(for username: String)
-}
-
-class FollowerListVC: UIViewController {
+class FollowerListVC: GFDataLoadingVC {
     enum Section { case main }
     
     var username: String!
@@ -21,9 +17,19 @@ class FollowerListVC: UIViewController {
     var followers: [Follower] = []
     var filteredFollowers: [Follower] = []
     var isSearching = false
+    var isLoadingMoreFollowers = false
     
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
+    
+    init(username: String) {
+        super.init(nibName: nil, bundle: nil)
+        self.username = username
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +38,8 @@ class FollowerListVC: UIViewController {
         configureCollectionView()
         configureDataSource()
         getFollowers(username, in: page)
+        
+        title = username
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,14 +83,13 @@ class FollowerListVC: UIViewController {
         let searchController = UISearchController()
         
         searchController.searchResultsUpdater = self
-        searchController.searchBar.delegate = self
         
         searchController.obscuresBackgroundDuringPresentation = false
         navigationItem.searchController = searchController
     }
 
     func configureCollectionView() {
-        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createThreeColumnFlowLayout(in: self.view))
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createThreeColumnFlowLayout(in: self.view))
         view.addSubview(collectionView)
         
         collectionView.backgroundColor = .systemBackground
@@ -109,6 +116,7 @@ class FollowerListVC: UIViewController {
     
     @objc func addButtonTapped() {
         showLoadingView()
+        isLoadingMoreFollowers = true
         NetworkManager.shared.getUserInfo(for: username) { [weak self] (result) in
             guard let self = self else { return }
             self.dissmisLoadingView()
@@ -127,6 +135,7 @@ class FollowerListVC: UIViewController {
             case .failure(let error):
                 self.presentGFAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
             }
+            self.isLoadingMoreFollowers = false
         }
     }
 }
@@ -138,7 +147,7 @@ extension FollowerListVC: UICollectionViewDelegate {
         let height = scrollView.frame.size.height
         
         if offsetY > contentHeight - height {
-            guard hasMoreFollowers else { return }
+            guard hasMoreFollowers, !isLoadingMoreFollowers else { return }
             page += 1
             getFollowers(username, in: page)
         }
@@ -156,30 +165,30 @@ extension FollowerListVC: UICollectionViewDelegate {
     }
 }
 
-extension FollowerListVC: UISearchResultsUpdating, UISearchBarDelegate {
+extension FollowerListVC: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        guard let filter = searchController.searchBar.text, !filter.isEmpty else { return }
+        guard let filter = searchController.searchBar.text, !filter.isEmpty else {
+            isSearching = false
+            filteredFollowers.removeAll()
+            updateData(on: followers)
+            return
+        }
         
         isSearching = true
         filteredFollowers = followers.filter { $0.login.contains(filter.lowercased()) }
         
         updateData(on: filteredFollowers)
     }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        isSearching = false
-        updateData(on: self.followers)
-    }
 }
 
-extension FollowerListVC: FollowerListVCDelegate {
+extension FollowerListVC: UserInfoVCDelegate {
     func didRequestFollowers(for username: String) {
         self.username = username
         title = username
         page = 1
         followers.removeAll()
         filteredFollowers.removeAll()
-        collectionView.setContentOffset(.zero, animated: true)
+        collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: true)
         getFollowers(username, in: page)
     }
 }
