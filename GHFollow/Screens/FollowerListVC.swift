@@ -55,8 +55,7 @@ class FollowerListVC: GFDataLoadingVC {
         navigationItem.rightBarButtonItem = addButton
     }
     
-    func getFollowers(_ username: String, in page: Int) {
-        showLoadingView()
+    private func fetchFollower(for username: String, at page: Int) {
         NetworkManager.shared.getFollowers(for: username, in: page) { [weak self] result in
             guard let self = self else { return }
             self.dissmisLoadingView()
@@ -77,6 +76,11 @@ class FollowerListVC: GFDataLoadingVC {
                 self.updateData(on: self.followers)
             }
         }
+    }
+    
+    func getFollowers(_ username: String, in page: Int) {
+        showLoadingView()
+        fetchFollower(for: username, at: page)
     }
     
     func configureSearchController() {
@@ -114,9 +118,7 @@ class FollowerListVC: GFDataLoadingVC {
         }
     }
     
-    @objc func addButtonTapped() {
-        showLoadingView()
-        isLoadingMoreFollowers = true
+    private func saveUser() {
         NetworkManager.shared.getUserInfo(for: username) { [weak self] (result) in
             guard let self = self else { return }
             self.dissmisLoadingView()
@@ -137,6 +139,12 @@ class FollowerListVC: GFDataLoadingVC {
             }
             self.isLoadingMoreFollowers = false
         }
+    }
+    
+    @objc func addButtonTapped() {
+        showLoadingView()
+        isLoadingMoreFollowers = true
+        saveUser()
     }
 }
 

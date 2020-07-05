@@ -5,4 +5,6 @@ This app let's you look through github accounts and see all the followers linked
 ## Technical description
 The apps uses custom and modular views recycled across all the pages in the app. All the network petitions are managed by the native URLSession API and images are cached in order to optimize network load. 
 
-The collection view used to display the user avatars are managed by the Diffable Data Source, so all the changes are managed with all new animations from iOS ecosystem. 
+The collection view used to display the user avatars are managed by the Diffable Data Source, so all the changes are managed with all new animations from iOS ecosystem.
+
+The persistance used to save favorited users is based on UserDefaults encoding the data in order to retrieve same custom model schema.

@@ -9,7 +9,6 @@
 import UIKit
 
 protocol GFFollowerItemVCDelegate: class {
-    func didTapGitHubProfile(for user: User)
     func didTapGetFollowers(for user: User)
 }
 

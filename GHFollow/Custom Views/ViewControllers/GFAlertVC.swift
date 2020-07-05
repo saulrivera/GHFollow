@@ -9,7 +9,6 @@
 import UIKit
 
 class GFAlertVC: UIViewController {
-    
     let containerView = GFAlertContainerView()
     let titleLabel = GFTitleLabel(alignment: .center, fontSize: 20)
     let messageLabel = GFBodyLabel(alignment: .center)

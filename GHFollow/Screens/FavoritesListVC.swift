@@ -36,6 +36,7 @@ class FavoritesListVC: GFDataLoadingVC {
         tableView.rowHeight = 80
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.removeExcessCells()
         
         tableView.register(FavoriteCell.self, forCellReuseIdentifier: FavoriteCell.reuseID)
     }
@@ -85,12 +86,14 @@ extension FavoritesListVC: UITableViewDelegate, UITableViewDataSource {
         guard editingStyle == .delete else { return }
         
         let favorite = favorites[indexPath.item]
-        favorites.remove(at: indexPath.item)
-        tableView.deleteRows(at: [indexPath], with: .left)
         
         PersistanceManager.updateWith(favorite: favorite, actionType: .remove) { [weak self] (error) in
             guard let self = self else { return }
-            guard let error = error else { return }
+            guard let error = error else {
+                self.favorites.remove(at: indexPath.item)
+                tableView.deleteRows(at: [indexPath], with: .left)
+                return
+            }
             
             self.presentGFAlertOnMainThread(title: "Unable to remove", message: error.rawValue, buttonTitle: "Ok")
         }
