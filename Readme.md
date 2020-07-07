@@ -8,3 +8,11 @@ The apps uses custom and modular views recycled across all the pages in the app.
 The collection view used to display the user avatars are managed by the Diffable Data Source, so all the changes are managed with all new animations from iOS ecosystem.
 
 The persistance used to save favorited users is based on UserDefaults encoding the data in order to retrieve same custom model schema.
+
+<p align="center">
+  <img src="https://githubmedia.s3.amazonaws.com/ghfollow/GHFollow1.png" width="30%" height="600px" />
+  <img src="https://githubmedia.s3.amazonaws.com/ghfollow/GHFollow2.png" width="30%" height="600px" />
+  <img src="https://githubmedia.s3.amazonaws.com/ghfollow/GHFollow3.png" width="30%" height="600px" />
+  <img src="https://githubmedia.s3.amazonaws.com/ghfollow/GHFollow4.png" width="30%" height="600px" />
+  <img src="https://githubmedia.s3.amazonaws.com/ghfollow/GHFollow5.png" width="30%" height="600px" />
+</p>
